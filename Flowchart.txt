@@ -1,0 +1,24 @@
+[Start] --> [Display Title Screen] --> [Select Language] --> [Game Loop]
+
+Game Loop:
+    [Display UI] --> [Get Player Guess] --> [Is Guess Correct?]
+
+Is Guess Correct?:
+    Yes --> [Display Win Message] --> [Calculate Stats] --> [Post-Game Menu]
+    No --> [Is Guess Incorrect?]
+
+Is Guess Incorrect?:
+    Yes --> [Update Hangman] --> [Add to Wrong Guesses] --> [All Guesses Used?]
+    No --> [Back to Game Loop]
+
+
+All Guesses Used?:
+    Yes --> [Display Lose Message] --> [Calculate Stats] --> [Post-Game Menu]
+    No --> [Back to Game Loop]
+
+Post-Game Menu:
+    [Display Options] --> [Get Player Choice] --> [Play Again/Main Menu/Exit]
+
+Play Again --> [Game Loop]
+Main Menu --> [Select Language] --> [Game Loop]
+Exit --> [End]

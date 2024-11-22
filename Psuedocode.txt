@@ -1,0 +1,52 @@
+// Main game loop
+Start Game:
+  Display Title Screen (with hangman image – hmm, how to center that properly?)
+  Get player name (maybe?)
+  Select Language (needs a menu!)
+  While game not over:
+    Display game UI (hangman, guessed letters, word)
+    Get player guess (letter or word)
+    IF guess is correct:
+      Display win message
+      Calculate game stats
+      Show post-game menu
+    ELSE IF guess is incorrect:
+      Update hangman image (is there a bug here?  The last image doesn’t show!)
+      Add guess to wrong guesses
+      IF all guesses used:
+        Display lose message
+        Calculate game stats
+        Show post-game menu
+  End While
+
+Show Post-Game Menu:
+  Display options: Play Again, Main Menu, Exit
+  Get player choice
+  IF Play Again:  startGame()  // Should this be startGame()? Or something else?
+  IF Main Menu: Go to Main Menu
+  IF Exit: Exit game
+
+
+Select Language:
+  Display language list
+  Get user choice (input validation needed!)
+  Set selectedLanguage
+
+
+Display Game UI:
+  Clear screen
+  Print guessed word
+  Print hangman image (check if the hangman index is correct... it is, right?)
+  Print wrong guesses
+
+Calculate Game Stats:
+  endTime = current time
+  timeTaken = endTime - startTime  // Should I divide by 1000?
+  print "Wrong guesses:", wrongGuesses.size
+  print "Time taken:", timeTaken
+
+
+//Functions that need to be implemented or fixed
+//This function is wrong, and needs to be fixed
+isWordGuessed(word, guess):
+  return word == guess //This is wrong for partial matches
